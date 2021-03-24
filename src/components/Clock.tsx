@@ -12,16 +12,25 @@ const Clock: React.FC<PropsType> = (props) => {
         }, 1000)
     }, [])
 
+    const hoursString = data.getHours() < 10
+        ? '0' + data.getHours()
+        : data.getHours()
 
+    const minutesString = data.getMinutes() < 10
+        ? '0' + data.getMinutes()
+        : data.getMinutes()
 
+    const secondsString = data.getSeconds() < 10
+        ? '0' + data.getSeconds()
+        : data.getSeconds()
 
     return <div>
 
-        <span> {data.getHours()} </span>
+        <span> {hoursString} </span>
         :
-        <span> {data.getMinutes()} </span>
+        <span> {minutesString} </span>
         :
-        <span> {data.getSeconds()} </span>
+        <span> {secondsString} </span>
 
 
     </div>
