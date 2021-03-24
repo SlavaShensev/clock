@@ -1,10 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 type PropsType = {}
 
 const Clock: React.FC<PropsType> = (props) => {
 
     const [data, setData] = useState(new Date())
+
+    useEffect(() => {
+        setInterval(() => {
+            setData(new Date())
+        }, 1000)
+    }, [])
+
+
 
 
     return <div>
