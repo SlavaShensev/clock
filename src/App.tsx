@@ -6,7 +6,7 @@ function App() {
 
     return <div>
         <Clock mode={'analog'}/>
-        <Clock mode={'digital'}/>
+        <Clock />
     </div>
 
 }

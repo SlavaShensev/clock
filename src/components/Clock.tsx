@@ -10,7 +10,7 @@ export type ClockViewPropsType = {
     date: Date
 }
 
-const Clock: React.FC<PropsType> = (props) => {
+const Clock: React.FC<PropsType> = ({mode}) => {
     const [data, setData] = useState(new Date())
     useEffect(() => {
         const intervalID = setInterval(() => {
@@ -21,7 +21,7 @@ const Clock: React.FC<PropsType> = (props) => {
 
     let view
 
-    switch (props.mode) {
+    switch (mode) {
         case "analog":
             view = <AnalogClockView date={data}/>
             break
